@@ -2,10 +2,12 @@ const Block = require('./block');
 const Blockchain = require('./blockchain');
 
 describe('Blockchain', ()=>{
-    let blockchain = new Blockchain();
+    let blockchain, newChain, originalChain;
 
     beforeEach(()=>{
         blockchain = new Blockchain();
+        newChain = new Blockchain();
+        originalChain = blockchain.chain;
     });
     
     it('containes a `chain` Array instance', ()=>{
@@ -53,6 +55,39 @@ describe('Blockchain', ()=>{
             describe('and the chain does not contain any invald blocks', ()=>{
                 it('returns true', ()=>{
                     expect(Blockchain.isValidChain(blockchain.chain)).toBe(true);
+                });
+            });
+        });
+    });
+
+    describe('replaceChain()', ()=>{
+        describe('when the new chain is not longer', ()=>{
+            it('does not replace the chain', ()=>{
+                newChain[0] = {new: 'chain'};
+                blockchain.replaceChain(newChain.chain);
+                expect(blockchain.chain).toEqual(originalChain);
+            });
+        });
+
+        describe('when the new chain is longer', ()=>{
+            
+            beforeEach(()=>{
+                newChain.addBlock({data: 'one'});
+                newChain.addBlock({data: 'two'});
+                newChain.addBlock({data: 'three'});
+            });
+
+            describe('and the chian is invalid', ()=>{
+                it('does not replace the chain', ()=>{
+                    newChain.chain[2].hash = 'fake-hash';
+                    blockchain.replaceChain(newChain.chain);
+                    expect(blockchain.chain).toEqual(originalChain);
+                });
+            });
+            describe('and the chain is valid', ()=>{
+                it('does replace the chain', ()=>{
+                    blockchain.replaceChain(newChain.chain);
+                    expect(blockchain.chain).toEqual(newChain.chain);
                 });
             });
         });
