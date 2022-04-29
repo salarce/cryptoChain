@@ -19,11 +19,13 @@ class Blockchain{
         for(let i=1; i<chain.length; i++){
             const block = chain[i];
             const actualLastHash = chain[i-1].hash;
+            const lastDifficulty = chain[i-1].difficulty;
 
-            const {timestamp, lastHash, hash, data} = block;
+            const {timestamp, lastHash, hash, data, difficulty, nonce} = block;
 
             if(lastHash !== actualLastHash) return false;
-            if(hash !== cryptoHash(timestamp, lastHash, data)) return false
+            if(Math.abs(lastDifficulty - difficulty) > 1) return false;
+            if(hash !== cryptoHash(timestamp, lastHash, data, difficulty, nonce)) return false
         }
 
         return true;
