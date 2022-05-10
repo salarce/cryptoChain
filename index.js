@@ -1,6 +1,6 @@
 const express = require('express');
 const Blockchain = require('./blockchain');
-const Pubsub = require('./pubsub');
+const Pubsub = require('./app/pubsub');
 const tcpPortUsed = require('tcp-port-used');
 const axios = require('axios');
 
