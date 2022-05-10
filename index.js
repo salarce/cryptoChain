@@ -1,6 +1,7 @@
 const express = require('express');
 const Blockchain = require('./blockchain');
 const Pubsub = require('./pubsub');
+const tcpPortUsed = require('tcp-port-used');
 
 const app = express();
 app.use(express.json());
@@ -23,5 +24,12 @@ app.post('/api/mine', (req, res)=>{
     res.redirect('/api/blocks');
 });
 
-const PORT = 3000;
-app.listen(PORT, ()=> console.log(`listening at localhost:${PORT}`));
+let PORT = 3000;
+
+tcpPortUsed.check(3000, '127.0.0.1')
+.then(function(inUse){
+    if(inUse){
+        PORT += Math.ceil(Math.random() * 1000)
+    }
+    app.listen(PORT, ()=> console.log(`listening at localhost:${PORT}`));
+})
