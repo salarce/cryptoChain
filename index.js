@@ -26,7 +26,18 @@ app.get('/api/blocks', (req, res)=>{
 app.post('/api/transact', (req, res)=>{
     let {amount, recipient} = req.body;
     amount = parseInt(amount);
-    const transaction = wallet.createTransaction({recipient, amount});
+    let transaction = transactionPool.existingTransaction({
+        inputAddress: wallet.publicKey
+    });
+    try{
+        if(transaction){
+            transaction.update({senderWallet: wallet, recipient, amount});
+        }else{
+            transaction = wallet.createTransaction({recipient, amount});
+        }
+    }catch(error){
+        return res.json({type: 'error', message: error.message});
+    }
     transactionPool.setTransaction(transaction);
     res.json({transaction});
 });
