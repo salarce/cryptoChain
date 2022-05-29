@@ -23,6 +23,10 @@ app.get('/api/blocks', (req, res)=>{
     res.json(blockchain.chain);
 });
 
+app.get('/api/transaction-pool-map', (req, res)=>{
+    res.json(transactionPool.transactionMap);
+});
+
 app.post('/api/transact', (req, res)=>{
     let {amount, recipient} = req.body;
     amount = parseInt(amount);
