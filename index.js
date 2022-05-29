@@ -13,7 +13,7 @@ app.use(express.json());
 const blockchain = new Blockchain();
 const transactionPool = new TransactionPool();
 const wallet = new Wallet();
-const pubsub = new Pubsub({blockchain});
+const pubsub = new Pubsub({blockchain, transactionPool});
 
 // setTimeout(() => {
 //     pubsub.broadcastChain();
@@ -43,6 +43,7 @@ app.post('/api/transact', (req, res)=>{
         return res.json({type: 'error', message: error.message});
     }
     transactionPool.setTransaction(transaction);
+    pubsub.broadcastTransaction(transaction);
     res.json({transaction});
 });
 
