@@ -3,6 +3,7 @@ const Blockchain = require('./blockchain');
 const Pubsub = require('./app/pubsub');
 const TransactionPool = require('./wallet/transaction-pool');
 const Wallet = require('./wallet');
+const TransactionMiner = require('./app/transaction-miner');
 const tcpPortUsed = require('tcp-port-used');
 const axios = require('axios');
 const { json } = require('express/lib/response');
@@ -14,6 +15,7 @@ const blockchain = new Blockchain();
 const transactionPool = new TransactionPool();
 const wallet = new Wallet();
 const pubsub = new Pubsub({blockchain, transactionPool});
+const transactionMiner = new TransactionMiner({blockchain, transactionPool, wallet, pubsub});
 
 // setTimeout(() => {
 //     pubsub.broadcastChain();
