@@ -25,6 +25,11 @@ app.get('/api/blocks', (req, res)=>{
     res.json(blockchain.chain);
 });
 
+app.get('/api/mine-transactions', (req, res)=>{
+    transactionMiner.mineTransactions();
+    res.redirect('/api/blocks');
+});
+
 app.get('/api/transaction-pool-map', (req, res)=>{
     res.json(transactionPool.transactionMap);
 });
