@@ -43,6 +43,10 @@ class Blockchain{
             console.error('the incoming chain must be valid');
             return;
         }
+        if(!this.validTransactionData({chain})){
+            console.error('The incoming chain has invalid data');
+            return;
+        }
         if(onSuccess) onSuccess();
         console.log('replacing chain with: ', chain);
         this.chain = chain;
