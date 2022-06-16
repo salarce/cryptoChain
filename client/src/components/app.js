@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Blocks from './blocks';
 
 class App extends Component {
 
@@ -15,6 +16,9 @@ class App extends Component {
             <h1>walletInfo: </h1>
             <h3>Address: {this.state.walletInfo.address}</h3>
             <h3>Balance: {this.state.walletInfo.balance}</h3>
+            <br/>
+            <Blocks/>
+
         </div>;
     }
 }
