@@ -1,25 +1,33 @@
 {
   "name": "cryptochain",
-  "version": "1.0.0",
-  "description": "",
-  "main": "block.js",
+  "version": "1.7.0",
+  "description": "a blockchain network for transferring assets via its coin",
   "scripts": {
     "test": "jest",
     "start": "node index",
-    "dev": "nodemon index"
+    "build-client": "parcel build client/src/index.html --dist-dir client/dist",
+    "dev-client": "parcel client/src/index.html --dist-dir client/dist",
+    "dev": "concurrently \"npm run dev-client\" \"node index\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["blockchain", "cryptocurrency"],
+  "author": "salarce",
+  "license": "GPLv2",
   "devDependencies": {
-    "jest": "^28.0.2"
+    "buffer": "^6.0.3",
+    "jest": "^28.0.2",
+    "parcel": "^2.6.0",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "@types/jest": "^27.4.1",
     "axios": "^0.27.2",
+    "concurrently": "^7.2.2",
     "elliptic": "^6.5.4",
     "express": "^4.18.1",
     "hex-to-binary": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.0",
     "redis": "^3.1.2",
     "tcp-port-used": "^1.0.2",
     "uuid": "^8.3.2"

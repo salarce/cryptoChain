@@ -1,0 +1,361 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+a {
+    text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+body{
+    background-color: #0E2338;
+    font-family: sans-serif;
+    color: #d1dae7;
+    box-sizing: border-box;
+    word-break: break-word;
+    height: 100vh;
+    /* line-height: 1; */
+}
+
+#loader {
+    position: relative;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin: -56px 0 0 -66px;
+}
+#loader::before, #loader::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+#loader::before {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        0deg, #ff00cc 0%,
+        #333399 100%
+    );
+    animation: spin 1s infinite linear;
+}
+#loader::after {
+    width: 80%;
+    height: 80%;
+    background-color: #0E2338;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+#root {
+    display: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+.header img {
+    width: 120px;
+    margin-right: 20px;
+}
+
+.wallet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E2340;
+    border: #0fff;
+    border-radius: 20px;
+    padding: 20px !important;
+    margin: 40px 20px;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+}
+
+.wallet h1 {
+    font-size: 25px;
+}
+
+.wallet .address, .balance {
+    background-color: #0F1E2F;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: #d1dae7;
+}
+
+.wallet i {
+    margin-right: 10px;
+}
+
+.wallet img {
+    width: 110px;
+    margin-right: 25px;
+}
+
+.wallet button {
+    background-color: #ffffff0f;
+    color: #d1dae7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 15px 15px 0 0;
+    font-weight: 600;
+}
+.wallet button:hover {
+    background-color: #ffffff2a;
+    transition: all .3s;
+}
+
+.blocks {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+    margin: 20px;
+}
+
+.block {
+    text-align: center;
+    padding: 20px;
+    background-color: #0F1E2F;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.block div {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.block .show {
+    font-size: 17px;
+    background-color: #ffffff0f;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.block .show:hover {
+    background-color: #ffffff2a;
+    transition: all .3s;
+}
+
+.block .datablock {
+    margin: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #0E2338;
+    animation: opendata 1s;
+}
+@keyframes opendata { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+.block > div .datablock:last-child {
+    margin-bottom: 0;
+}
+
+.block .datablock > div , .datablock div:last-child , .block > div:last-child{
+    margin: 0px;
+}
+
+.form {
+    background-color: #0E2340;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.form input {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.form a button {
+    margin-left: 15px;
+    background-color: rgb(255 255 255 / 3%);
+}
+
+.form button {
+    background-color: rgb(255 255 255 / 6%);
+    color: #d1dae7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.form button:hover {
+    background-color: #ffffff2a;
+    transition: all .3s;
+}
+.form input {
+    border: 1px solid #d1dae745;
+    background-color: #0F1E2F;
+    border-radius: 5px;
+    color: #d1dae7;
+}
+.form input:first-of-type {
+    margin-top: 15px;
+}
+.form i {
+    margin-right: 10px;
+}
+
+.transaction-pool {
+    background-color: #0E2340;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+    background-image: url('../dist/images/pool.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-blend-mode: color-dodge;
+    background-size: 50%;
+}
+.transaction-pool h2 {
+    margin-bottom: 15px;
+}
+.transaction-pool div {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.transaction-pool .block {
+    margin: 20px auto !important;
+    background-color: rgb(15 30 47 / 91%);
+    width: fit-content;
+}
+.transaction-pool .block > div > div:last-child {
+    margin: 0;
+}
+.transaction-pool a {
+    color: #d1dae7;
+}
+.transaction-pool button {
+    background-color: rgb(255 255 255 / 6%);
+    color: #d1dae7;
+    border: none;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.transaction-pool .tpool-btn button:last-child {
+    margin-left: 15px;
+    background-color: rgb(255 255 255 / 3%);
+}
+.transaction-pool button:hover {
+    background-color: rgb(255 255 255 / 16%) !important;
+    transition: all .3s;
+}
+.transaction-pool i {
+    margin-right: 10px;
+}
+
+footer {
+    padding: 50px 0;
+    background-image: url('../dist/images/earth.png');
+    background-position: 50% 23%;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    padding: 10px;
+    background-color: #0f1e2f96;
+    border-radius: 10;
+    max-width: fit-content;
+}
+
+.footer-send {
+    margin-top: 140px;
+}
