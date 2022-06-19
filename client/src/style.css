@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body{
+    background-color: #0E2338;
+    font-family: sans-serif;
+    color: #d1dae7;
+    box-sizing: border-box;
+    word-break: break-word;
+    /* line-height: 1; */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+.header img {
+    width: 120px;
+    margin-right: 20px;
+}
+
+.wallet{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0E2340;
+    border: #0fff;
+    border-radius: 20px;
+    padding: 20px !important;
+    margin: 40px 20px;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+}
+
+.wallet h1 {
+    font-size: 25px;
+}
+
+.wallet .address, .balance {
+    background-color: #0F1E2F;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: #d1dae7;
+}
+
+.wallet i {
+    margin-right: 10px;
+}
+
+.wallet img {
+    width: 110px;
+    margin-right: 25px;
+}
+
+.blocks {
+    background-color: #0E2340;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    box-shadow: 0 2px 10px 0 rgb(0 0 0 / 20%);
+}
+
+.blocks h2 {
+    text-align: center;
+}
+
+.block {
+    text-align: center;
+    padding: 20px;
+    background-color: #0F1E2F;
+    border-radius: 10;
+    margin-bottom: 20px;
+}
+
+footer {
+    padding: 50px 0;
+    background-image: url('../dist/images/earth.png');
+    background-position: 50% 23%;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+}
+
+footer p {
+    padding: 10px;
+    background-color: #0f1e2f96;
+    border-radius: 10;
+    max-width: fit-content;
+}

@@ -8,12 +8,16 @@ class Blocks extends Component {
         this.setState({blocks: response.data});
     } 
     render() { 
-        return <div>
-            <h3>Blocks</h3>
-            {this.state.blocks.map((block)=>{
-                return <div key={block.hash}>{block.hash}</div>
-            })}
-        </div>;
+        return (
+            <div className="blocks">
+                <h2>Chain</h2>
+                {
+                    this.state.blocks.map((block) => {
+                        return <div key={block.hash} className="block">{block.hash}</div>
+                    })
+                }
+            </div>
+        )
     }
 }
  
