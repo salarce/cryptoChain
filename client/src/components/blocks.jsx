@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Block from './block';
 
 class Blocks extends Component {
     state = { blocks: [] }
@@ -13,7 +14,7 @@ class Blocks extends Component {
                 <h2>Chain</h2>
                 {
                     this.state.blocks.map((block) => {
-                        return <div key={block.hash} className="block">{block.hash}</div>
+                        return <Block key={block.hash} block={block} />
                     })
                 }
             </div>
