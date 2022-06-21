@@ -147,6 +147,47 @@ body{
     margin: 0px;
 }
 
+.form {
+    background-color: #0E2340;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.form input {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.form button {
+    background-color: #ffffff0f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.form button:hover {
+    border: 1px solid #d1dae7;
+    background-color: transparent;
+}
+.form input {
+    border: 1px solid #d1dae745;
+    background-color: #0F1E2F;
+    border-radius: 5px;
+    color: #d1dae7;
+}
+.form input:first-of-type {
+    margin-top: 15px;
+}
+
 footer {
     padding: 50px 0;
     background-image: url('../dist/images/earth.png');
