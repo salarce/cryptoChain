@@ -9,16 +9,15 @@ class Blocks extends Component {
         this.setState({blocks: response.data});
     } 
     render() { 
-        return (
+        return <>
+            <h2>Chain</h2>
             <div className="blocks">
-                <h2>Chain</h2>
                 {
                     this.state.blocks.map((block) => {
-                        return <Block key={block.hash} block={block} />
+                        return <Block key={block.hash} block={block} />;
                     })
                 }
-            </div>
-        )
+            </div></>
     }
 }
  
