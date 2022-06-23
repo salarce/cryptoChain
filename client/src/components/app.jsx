@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Blocks from './blocks';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
 
@@ -29,6 +30,7 @@ class App extends Component {
                     <i className='fas fa-coins'></i>
                     Balance: {this.state.walletInfo.balance}
                 </div>
+                <Link to='/transact'><button><i class="fa-solid fa-money-bill-transfer"></i>send money</button></Link>
             </div>
         </div>
         <Blocks/>

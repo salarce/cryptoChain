@@ -22,12 +22,23 @@ class ConductTransaction extends Component {
     }
 
     render() { 
-        return <div className="form">
-            <h2>Send Transaction</h2>
+        return <>
+        <div className="header">
+            <img src="/images/cryptochain.svg" alt="cryptochain" />
+            <h1>CryptoChain</h1>
+        </div>
+        <div className="form">
+            <h2>Transaction</h2>
             <input ref={this.recipient} placeholder='recipient' type="text" />
             <input ref={this.amount} placeholder='amount' type="number" />
             <button onClick={this.handleSend}>send</button>
-        </div>;
+        </div>
+        <footer className='footer-send'>
+            <div>
+                <p>made by &#64;salarce ,for more information check my <a href="https://github.com/salarce" target="_blank" rel="noopener noreferrer">Github</a></p>
+            </div>
+        </footer>
+        </>;
     }
 }
  

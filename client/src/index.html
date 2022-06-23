@@ -7,9 +7,23 @@
     <title>Cryptochain</title>
     <link rel="icon" sizes="32x32" href="../dist/images/cryptochain-v2.svg">
 </head>
-<body>
-   <div id="root"></div>
+<body onload="myFunction()">
+    <!-- <div class="spinner" id="loader"></div> -->
+    <div id="loader"></div>
+   <div id="root" class="animate-bottom"></div>
    <script src="https://kit.fontawesome.com/c65471b29d.js" crossorigin="anonymous"></script>
    <script type="module" src="index.js"></script>
+   <script>
+        var myVar;
+    
+        function myFunction() {
+            myVar = setTimeout(showPage, 600);
+        }
+    
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("root").style.display = "block";
+        }
+    </script>
 </body>
 </html>

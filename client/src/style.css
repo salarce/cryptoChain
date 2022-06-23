@@ -47,7 +47,68 @@ body{
     color: #d1dae7;
     box-sizing: border-box;
     word-break: break-word;
+    height: 100vh;
     /* line-height: 1; */
+}
+
+#loader {
+    position: relative;
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin: -56px 0 0 -66px;
+}
+#loader::before, #loader::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+}
+#loader::before {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        0deg, #ff00cc 0%,
+        #333399 100%
+    );
+    animation: spin 1s infinite linear;
+}
+#loader::after {
+    width: 80%;
+    height: 80%;
+    background-color: #0E2338;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+@-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
+
+#root {
+    display: none;
 }
 
 .header {
@@ -99,6 +160,22 @@ body{
     margin-right: 25px;
 }
 
+.wallet button {
+    background-color: #ffffff0f;
+    color: #d1dae7;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 600;
+}
+.wallet button:hover {
+    background-color: #ffffff2a;
+    transition: all .3s;
+}
+
 .blocks {
     display: grid;
     grid-template-columns: auto auto;
@@ -128,8 +205,8 @@ body{
 }
 
 .block .show:hover {
-    border: 1px solid #d1dae7;
-    background-color: transparent;
+    background-color: #ffffff2a;
+    transition: all .3s;
 }
 
 .block .datablock {
@@ -137,6 +214,11 @@ body{
     padding: 15px;
     border-radius: 6px;
     background-color: #0E2338;
+    animation: opendata 1s;
+}
+@keyframes opendata { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
 }
 
 .block > div .datablock:last-child {
@@ -175,8 +257,8 @@ body{
     cursor: pointer;
 }
 .form button:hover {
-    border: 1px solid #d1dae7;
-    background-color: transparent;
+    background-color: #ffffff2a;
+    transition: all .3s;
 }
 .form input {
     border: 1px solid #d1dae745;
@@ -206,4 +288,8 @@ footer p {
     background-color: #0f1e2f96;
     border-radius: 10;
     max-width: fit-content;
+}
+
+.footer-send {
+    margin-top: 140px;
 }

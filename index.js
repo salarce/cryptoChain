@@ -23,10 +23,6 @@ const transactionMiner = new TransactionMiner({blockchain, transactionPool, wall
 //     pubsub.broadcastChain();
 // }, 1000);
 
-app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, './client/dist/index.html'));
-});
-
 app.get('/api/blocks', (req, res)=>{
     res.json(blockchain.chain);
 });
@@ -73,6 +69,10 @@ app.post('/api/mine', (req, res)=>{
     blockchain.addBlock({data});
     pubsub.broadcastChain();
     res.redirect('/api/blocks');
+});
+
+app.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname, './client/dist/index.html'));
 });
 
 const walletFoo = new Wallet();
