@@ -6,10 +6,22 @@ import { Link } from 'react-router-dom';
 class TransactionPool extends Component {
     state = { transactionMap: {} } 
 
-    async componentDidMount () {
+    async getTransactions () {
         const response = await axios.get(`${document.location.origin}/api/transaction-pool-map`);
         this.setState( { transactionMap: response.data } );
     }
+
+    componentDidMount () {
+        this.getTransactions();
+        this.getTransactionsInterval = setInterval( () => {
+            this.getTransactions();
+        }, 5000 )
+    }
+
+    componentWillUnmount () {
+        clearInterval(this.getTransactionsInterval);
+    }
+    
     render() { 
         return <>
         <div className="header">
