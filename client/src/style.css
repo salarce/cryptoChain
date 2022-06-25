@@ -314,7 +314,6 @@ body{
     color: #d1dae7;
 }
 .transaction-pool button {
-    display: block;
     background-color: rgb(255 255 255 / 6%);
     color: #d1dae7;
     border: none;
@@ -325,8 +324,12 @@ body{
     font-weight: 600;
     cursor: pointer;
 }
+.transaction-pool .tpool-btn button:last-child {
+    margin-left: 15px;
+    background-color: rgb(255 255 255 / 3%);
+}
 .transaction-pool button:hover {
-    background-color: #ffffff2a;
+    background-color: rgb(255 255 255 / 16%) !important;
     transition: all .3s;
 }
 .transaction-pool i {

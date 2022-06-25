@@ -21,6 +21,12 @@ class TransactionPool extends Component {
     componentWillUnmount () {
         clearInterval(this.getTransactionsInterval);
     }
+
+    handleMine = async () => {
+        await axios.get(`${document.location.origin}/api/mine-transactions`);
+        alert('success');
+        this.props.history.push('/');
+    }
     
     render() { 
         return <>
@@ -39,7 +45,10 @@ class TransactionPool extends Component {
                     )
                 })
             }
-            <button><Link to='/'><i className='fas fa-home'></i>Home</Link></button>
+            <div className="tpool-btn">
+                <button onClick={this.handleMine}><i className='fas fa-home'></i>Mine</button>
+                <button><Link to='/'><i className='fas fa-home'></i>Home</Link></button>
+            </div>
         </div>
         <footer className='footer-send'>
             <div>
