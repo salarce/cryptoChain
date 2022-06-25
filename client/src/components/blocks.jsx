@@ -5,7 +5,7 @@ import Block from './block';
 class Blocks extends Component {
     state = { blocks: [] }
     async componentDidMount() {
-        const response = await axios.get('http://localhost:3000/api/blocks');
+        const response = await axios.get(`${document.location.origin}/api/blocks`);
         this.setState({blocks: response.data});
     } 
     render() { 

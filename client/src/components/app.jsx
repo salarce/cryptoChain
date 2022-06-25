@@ -8,7 +8,7 @@ class App extends Component {
     state = {walletInfo: {address: "", balance: ""}}
 
     async componentDidMount(){
-        const response = await axios.get('http://localhost:3000/api/wallet-info');
+        const response = await axios.get(`${document.location.origin}/api/wallet-info`);
         this.setState({walletInfo: response.data});
     }
 

@@ -11,7 +11,7 @@ class ConductTransaction extends Component {
         const recipient = this.recipient.current.value;
         const amount = this.amount.current.value;
         if(recipient && amount) {
-            const response = await axios.post('http://localhost:3000/api/transact', {recipient, amount});
+            const response = await axios.post(`${document.location.origin}/api/transact`, {recipient, amount});
             if(response.data.type && response.data.type === 'error') {
                 alert(response.data.message)
             } else {

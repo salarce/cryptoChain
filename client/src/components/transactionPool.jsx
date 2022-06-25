@@ -7,7 +7,7 @@ class TransactionPool extends Component {
     state = { transactionMap: {} } 
 
     async componentDidMount () {
-        const response = await axios.get('http://localhost:3000/api/transaction-pool-map');
+        const response = await axios.get(`${document.location.origin}/api/transaction-pool-map`);
         this.setState( { transactionMap: response.data } );
     }
     render() { 
