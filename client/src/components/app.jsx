@@ -30,7 +30,8 @@ class App extends Component {
                     <i className='fas fa-coins'></i>
                     Balance: {this.state.walletInfo.balance}
                 </div>
-                <Link to='/transact'><button><i class="fa-solid fa-money-bill-transfer"></i>send money</button></Link>
+                <Link to='/transact'><button><i class="fa-solid fa-money-bill-transfer"></i>Send Money</button></Link>
+                <Link to='/transaction-pool'><button><i class="fa-solid fa-water-ladder"></i>Transactions Pool</button></Link>
             </div>
         </div>
         <Blocks/>

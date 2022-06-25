@@ -24,6 +24,9 @@ footer, header, hgroup, menu, nav, section {
 ol, ul {
 	list-style: none;
 }
+a {
+    text-decoration: none;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -168,7 +171,7 @@ body{
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 15px;
+    margin: 15px 15px 0 0;
     font-weight: 600;
 }
 .wallet button:hover {
@@ -247,14 +250,20 @@ body{
     font-size: 20px;
 }
 
+.form a button {
+    margin-left: 15px;
+    background-color: rgb(255 255 255 / 3%);
+}
+
 .form button {
-    background-color: #ffffff0f;
-    color: #fff;
+    background-color: rgb(255 255 255 / 6%);
+    color: #d1dae7;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 17px;
     cursor: pointer;
+    font-weight: 600;
 }
 .form button:hover {
     background-color: #ffffff2a;
@@ -268,6 +277,60 @@ body{
 }
 .form input:first-of-type {
     margin-top: 15px;
+}
+.form i {
+    margin-right: 10px;
+}
+
+.transaction-pool {
+    background-color: #0E2340;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px 0 rgb(0 0 0 / 20%);
+    background-image: url('../dist/images/pool.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-blend-mode: color-dodge;
+    background-size: 50%;
+}
+.transaction-pool h2 {
+    margin-bottom: 15px;
+}
+.transaction-pool div {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.transaction-pool .block {
+    margin: 20px auto !important;
+    background-color: rgb(15 30 47 / 91%);
+    width: fit-content;
+}
+.transaction-pool .block > div > div:last-child {
+    margin: 0;
+}
+.transaction-pool a {
+    color: #d1dae7;
+}
+.transaction-pool button {
+    display: block;
+    background-color: rgb(255 255 255 / 6%);
+    color: #d1dae7;
+    border: none;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.transaction-pool button:hover {
+    background-color: #ffffff2a;
+    transition: all .3s;
+}
+.transaction-pool i {
+    margin-right: 10px;
 }
 
 footer {
