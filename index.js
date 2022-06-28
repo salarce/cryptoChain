@@ -104,20 +104,20 @@ const walletBarAction = ()=> generateWalletTransaction ({
     amount: 15
 });
 
-for(let i=0; i<10; i++){
-    if(i%3 === 0){
-        walletAction();
-        walletFooAction();
-    }else if(i%3 === 1){
-        walletAction();
-        walletBarAction();
-    }else {
-        walletFooAction();
-        walletBarAction();
-    }
+// for(let i=0; i<10; i++){
+//     if(i%3 === 0){
+//         walletAction();
+//         walletFooAction();
+//     }else if(i%3 === 1){
+//         walletAction();
+//         walletBarAction();
+//     }else {
+//         walletFooAction();
+//         walletBarAction();
+//     }
 
-    transactionMiner.mineTransactions();
-}
+//     transactionMiner.mineTransactions();
+// }
 
 const rootPort = 3000;
 let PORT = 3000;
