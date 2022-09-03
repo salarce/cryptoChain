@@ -46,7 +46,7 @@ class TransactionPool extends Component {
                 })
             }
             <div className="tpool-btn">
-                <button onClick={this.handleMine}><i className='fas fa-home'></i>Mine</button>
+                <button onClick={this.handleMine}><i className='fa-solid fa-filter-circle-dollar'></i>Mine</button>
                 <button><Link to='/'><i className='fas fa-home'></i>Home</Link></button>
             </div>
         </div>
