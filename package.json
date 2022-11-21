@@ -1,16 +1,16 @@
 {
   "name": "cryptochain",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.6.0",
+  "description": "a blockchain network for transferring assets via its coin",
   "main": "block.js",
   "scripts": {
     "test": "jest",
     "start": "node index",
     "dev": "nodemon index"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["blockchain", "cryptocurrency"],
+  "author": "salarce",
+  "license": "GPLv2",
   "devDependencies": {
     "jest": "^28.0.2"
   },
