@@ -1,7 +1,7 @@
 {
   "name": "cryptochain",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.7.0",
+  "description": "a blockchain network for transferring assets via its coin",
   "scripts": {
     "test": "jest",
     "start": "node index",
@@ -9,9 +9,9 @@
     "dev-client": "parcel client/src/index.html --dist-dir client/dist",
     "dev": "concurrently \"npm run dev-client\" \"node index\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["blockchain", "cryptocurrency"],
+  "author": "salarce",
+  "license": "GPLv2",
   "devDependencies": {
     "buffer": "^6.0.3",
     "jest": "^28.0.2",
